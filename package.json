@@ -5,12 +5,13 @@
   "type": "module",
   "homepage": "https://darshankumargp.github.io/CodeVerse/",
   "scripts": {
-    "dev": "vite",
+    "dev": "copy index.local.html index.html && vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "prepare-deploy": "copy dist\\index.html index.html",
+    "deploy": "npm run prepare-deploy && gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.23.6",
